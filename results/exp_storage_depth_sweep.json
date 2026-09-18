@@ -1,0 +1,90 @@
+{
+  "2": {
+    "num_paths": 4,
+    "num_occurrences": 8,
+    "storage_kb_c1_mean": 2.171875,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 0.828125,
+    "storage_kb_max_std": 0.0
+  },
+  "3": {
+    "num_paths": 8,
+    "num_occurrences": 24,
+    "storage_kb_c1_mean": 6.515625,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 1.984375,
+    "storage_kb_max_std": 0.0
+  },
+  "4": {
+    "num_paths": 16,
+    "num_occurrences": 64,
+    "storage_kb_c1_mean": 17.375,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 4.375,
+    "storage_kb_max_std": 0.0
+  },
+  "5": {
+    "num_paths": 26,
+    "num_occurrences": 124,
+    "storage_kb_c1_mean": 33.6640625,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 7.4609375,
+    "storage_kb_max_std": 0.0
+  },
+  "6": {
+    "num_paths": 40,
+    "num_occurrences": 222,
+    "storage_kb_c1_mean": 60.26953125,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 11.91796875,
+    "storage_kb_max_std": 0.0
+  },
+  "7": {
+    "num_paths": 61,
+    "num_occurrences": 390,
+    "storage_kb_c1_mean": 105.87890625,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 18.55859375,
+    "storage_kb_max_std": 0.0
+  },
+  "8": {
+    "num_paths": 82,
+    "num_occurrences": 579,
+    "storage_kb_c1_mean": 157.189453125,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 25.154296875,
+    "storage_kb_max_std": 0.0
+  },
+  "9": {
+    "num_paths": 104,
+    "num_occurrences": 799,
+    "storage_kb_c1_mean": 216.916015625,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 32.552734375,
+    "storage_kb_max_std": 0.0
+  },
+  "10": {
+    "num_paths": 115,
+    "num_occurrences": 920,
+    "storage_kb_c1_mean": 249.765625,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 36.484375,
+    "storage_kb_max_std": 0.0
+  },
+  "11": {
+    "num_paths": 122,
+    "num_occurrences": 1005,
+    "storage_kb_c1_mean": 272.841796875,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 37.564453125,
+    "storage_kb_max_std": 0.0
+  },
+  "12": {
+    "num_paths": 126,
+    "num_occurrences": 1057,
+    "storage_kb_c1_mean": 286.958984375,
+    "storage_kb_c1_std": 0.0,
+    "storage_kb_max_mean": 39.322265625,
+    "storage_kb_max_std": 0.0
+  }
+}

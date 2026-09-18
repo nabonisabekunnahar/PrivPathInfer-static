@@ -1,0 +1,44 @@
+{
+  "1": {
+    "ciphertext_count": 579,
+    "linkability": 1,
+    "storage_kb_mean": 157.189453125,
+    "storage_kb_std": 0.0
+  },
+  "2": {
+    "ciphertext_count": 303,
+    "linkability": 2,
+    "storage_kb_mean": 81.404296875,
+    "storage_kb_std": 0.0
+  },
+  "4": {
+    "ciphertext_count": 171,
+    "linkability": 4,
+    "storage_kb_mean": 48.404296875,
+    "storage_kb_std": 0.0
+  },
+  "8": {
+    "ciphertext_count": 114,
+    "linkability": 8,
+    "storage_kb_mean": 34.154296875,
+    "storage_kb_std": 0.0
+  },
+  "16": {
+    "ciphertext_count": 91,
+    "linkability": 16,
+    "storage_kb_mean": 28.404296875,
+    "storage_kb_std": 0.0
+  },
+  "32": {
+    "ciphertext_count": 82,
+    "linkability": 32,
+    "storage_kb_mean": 26.154296875,
+    "storage_kb_std": 0.0
+  },
+  "max": {
+    "ciphertext_count": 78,
+    "linkability": 82,
+    "storage_kb_mean": 25.154296875,
+    "storage_kb_std": 0.0
+  }
+}
