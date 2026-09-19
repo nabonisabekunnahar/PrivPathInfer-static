@@ -31,8 +31,16 @@ exercise only static, single-shot inference.
 - `system/` — path extraction, the deduplication-parameter rule store,
   the two-round secure comparison protocol (`CloudParty`/`UserParty`),
   and the router/subtree partitioner.
-- `experiments/` — dataset loaders and the three experiments
-  (fidelity, storage/dedup, subtree decryption workload).
+- `baseline/` — SDTC (Liang et al. 2021), ported from the thesis
+  repository's `baseline/` folder and used only as a comparison point
+  for the storage and fidelity evaluation. Its docstrings originally
+  compared SDTC's lack of incremental-update support against
+  PrivPathInfer's own update capability; those comparisons were
+  removed on the same "must not appear anywhere in this repository"
+  basis as everything else update-related — SDTC's own update cost
+  isn't a claim this paper makes either way.
+- `experiments/` — dataset loaders and the four experiments (fidelity,
+  storage/dedup, subtree decryption workload, SDTC baseline).
 - `data/` — raw dataset files (`diabetes.csv`, `processed.cleveland.data`,
   `framingham.csv`); `breast_cancer` loads directly from scikit-learn.
 - `tests/test_all.py` — encoding, Paillier correctness/homomorphism,
@@ -48,6 +56,7 @@ python -m tests.test_all
 python -m experiments.exp_fidelity
 python -m experiments.exp_storage_dedup
 python -m experiments.exp_subtree_workload
+python -m experiments.exp_sdtc_baseline
 ```
 
 All experiments use 1024-bit Paillier keys throughout (gmpy2 required
@@ -65,8 +74,9 @@ installed, which will be much slower at this key size).
   There is no run-to-run variance to average over (this is exercised
   directly in `tests/test_all.py`).
 - **`exp_storage_dedup`** — PIMA rule-store storage size (KB) across
-  tree depths 2-12 at `c=1` vs `c="max"`, and a deduplication ablation
-  at depth 8 across `c in {1,2,4,8,16,32,"max"}` (ciphertext count,
+  tree depths 2-12 at `c=1` vs `c="max"`, plus an SDTC (5-bin) series
+  at the same depths for comparison, and a deduplication ablation at
+  depth 8 across `c in {1,2,4,8,16,32,"max"}` (ciphertext count,
   storage, linkability). Ten repetitions per configuration; storage is
   reported as mean/std, ciphertext count and linkability are exact.
 - **`exp_subtree_workload`** — User-side decryption time under
@@ -77,3 +87,33 @@ installed, which will be much slower at this key size).
   plaintext timing comparison, since Paillier's per-operation cost is
   expected to be far slower than plaintext and is not a contribution
   of this work.
+- **`exp_sdtc_baseline`** — SDTC's own classification disagreement
+  rate against the plaintext tree at 5-bin discretization, across all
+  four datasets. This is SDTC's accuracy-loss number, not
+  PrivPathInfer's (PrivPathInfer's own agreement is `exp_fidelity`,
+  and it does not discretize at all).
+
+## Storage byte-size methodology
+
+`system/rule_store.py:measure_storage_bytes` reports storage as: one
+copy of each **distinct** Paillier ciphertext, plus a fixed-size
+bookkeeping payload for **every** rule row (ciphertexts may be shared
+across rows when `c > 1`; bookkeeping is per row regardless).
+
+- **Ciphertext size**: a Paillier ciphertext is an element of
+  `Z_{n^2}`, so its serialized size is `2 x bit_length(n)` bits, i.e.
+  `2 x bit_length(n) / 8` bytes — 256 bytes at a 1024-bit `n`.
+- **Per-rule bookkeeping**: a feature tag (16 bytes when PRP-concealed
+  at `c=1`, 4 bytes as a plaintext `int32` index when `c>1`), a
+  1-byte direction, a 4-byte path id, and a 1-byte label.
+
+The SDTC comparison series in `exp_storage_depth_sweep.json` uses
+SDTC's own natural unit: each decision-table entry is three 16-byte
+PRF/PRP outputs (`encrypted_key`, `encrypted_label`, `path_signature`
+— 48 bytes/entry), with one entry per root-to-leaf path and no
+cross-path sharing.
+
+This is a from-scratch accounting choice, not a reproduction of any
+other paper's byte model — if these storage numbers don't match
+another PrivPathInfer-related paper's figures, this is why, and the
+per-field sizes above are the answer to give a reviewer who asks.

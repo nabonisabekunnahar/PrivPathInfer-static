@@ -1,0 +1,30 @@
+{
+  "pima": {
+    "total_records": 768,
+    "disagreements": 240,
+    "disagreement_pct": 31.25,
+    "n_bins": 5,
+    "num_table_entries": 460
+  },
+  "breast_cancer": {
+    "total_records": 569,
+    "disagreements": 161,
+    "disagreement_pct": 28.29525483304042,
+    "n_bins": 5,
+    "num_table_entries": 559
+  },
+  "heart": {
+    "total_records": 303,
+    "disagreements": 87,
+    "disagreement_pct": 28.712871287128714,
+    "n_bins": 5,
+    "num_table_entries": 297
+  },
+  "framingham": {
+    "total_records": 3658,
+    "disagreements": 84,
+    "disagreement_pct": 2.2963367960634224,
+    "n_bins": 5,
+    "num_table_entries": 2560
+  }
+}
