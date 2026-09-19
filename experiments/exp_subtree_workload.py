@@ -2,7 +2,15 @@
 exp_subtree_workload.py — User-side decryption time under
 baseline_classify (no partitioning) vs subtree_classify at router
 depths 1-4, for each dataset, at Paillier key size 1024. Averaged over
-at least 10 queries per configuration, mean and standard deviation.
+50 queries per configuration, mean and standard deviation.
+
+50 queries, not 10: at shallow router depths, different queries select
+subtrees of very different sizes, so per-query decryption count has
+real variance. At 10 queries the standard error was large enough
+(e.g. ~17% on Breast Cancer at router depth 1) to swap which depth
+looked like the peak between runs of identical code. Reporting the
+standard error alongside the mean (below) makes this readable
+directly from the output instead of discovered by re-running.
 
 Reports only the within-scheme reduction percentage and the
 underlying rule/decryption counts. Never a comparison against
@@ -39,7 +47,7 @@ from experiments.datasets import load_dataset, DATASET_NAMES
 KEY_BITS = 1024
 MAX_DEPTH = 5
 RANDOM_STATE = 42
-NUM_QUERIES = 10
+NUM_QUERIES = 50
 ROUTER_DEPTHS = [1, 2, 3, 4]
 
 
@@ -73,6 +81,7 @@ def run_dataset(name):
 
     baseline_mean = float(np.mean(baseline_times))
     baseline_std = float(np.std(baseline_times))
+    baseline_sem = baseline_std / (len(baseline_times) ** 0.5)
 
     router_results = {}
     for router_depth in ROUTER_DEPTHS:
@@ -99,6 +108,7 @@ def run_dataset(name):
 
         sub_mean = float(np.mean(sub_times))
         sub_std = float(np.std(sub_times))
+        sub_sem = sub_std / (len(sub_times) ** 0.5)
         reduction_pct = 100.0 * (baseline_mean - sub_mean) / baseline_mean
 
         num_subtree_positions = sum(len(v) for v in subtree_positions.values())
@@ -107,6 +117,7 @@ def run_dataset(name):
         router_results[str(router_depth)] = {
             "decrypt_time_mean_sec": sub_mean,
             "decrypt_time_std_sec": sub_std,
+            "decrypt_time_sem_sec": sub_sem,
             "reduction_pct": reduction_pct,
             "num_router_rules": len(router_positions),
             "num_subtree_rules_total": num_subtree_positions,
@@ -122,8 +133,10 @@ def run_dataset(name):
 
     return {
         "num_baseline_rules": len(baseline_store.rules),
+        "num_queries": NUM_QUERIES,
         "baseline_decrypt_time_mean_sec": baseline_mean,
         "baseline_decrypt_time_std_sec": baseline_std,
+        "baseline_decrypt_time_sem_sec": baseline_sem,
         "mean_baseline_decrypt_count": float(np.mean(baseline_decrypts)),
         "std_baseline_decrypt_count": float(np.std(baseline_decrypts)),
         "router_depths": router_results,
