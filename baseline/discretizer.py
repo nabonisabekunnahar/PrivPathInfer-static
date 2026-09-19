@@ -28,10 +28,6 @@ Discretization Methods:
 Reference:
     Liang et al. 2021, Section III-B: "Feature Preprocessing"
     The paper requires discretization as a preprocessing step.
-
-Author: Mst Sabekunnahar Naboni (Roll: 2007034)
-        BSc in CSE, KUET
-        Thesis: CSE 4000
 """
 
 import math

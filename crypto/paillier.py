@@ -42,10 +42,6 @@ Key Sizes:
     512-bit  n: for testing and development
     1024-bit n: for experiments (reported in paper)
     2048-bit n: recommended for production
-
-Author: Mst Sabekunnahar Naboni (Roll: 2007034)
-        BSc in CSE, KUET
-        Thesis: CSE 4000
 """
 
 import os

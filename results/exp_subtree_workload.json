@@ -1,44 +1,48 @@
 {
   "pima": {
     "num_baseline_rules": 124,
-    "baseline_decrypt_time_mean_sec": 0.39719312998931855,
-    "baseline_decrypt_time_std_sec": 0.007099173810340637,
+    "baseline_decrypt_time_mean_sec": 0.40906585002085194,
+    "baseline_decrypt_time_std_sec": 0.0106195637511393,
     "mean_baseline_decrypt_count": 124.0,
     "std_baseline_decrypt_count": 0.0,
     "router_depths": {
       "1": {
-        "decrypt_time_mean_sec": 0.0476240299991332,
-        "decrypt_time_std_sec": 0.02179688909704482,
-        "reduction_pct": 88.00985555807223,
+        "decrypt_time_mean_sec": 0.043941030011046676,
+        "decrypt_time_std_sec": 0.01954450248235154,
+        "reduction_pct": 89.25820133633574,
         "num_router_rules": 1,
         "num_subtree_rules_total": 98,
-        "mean_decrypt_count": 14.7,
-        "std_decrypt_count": 6.603786792439623
+        "num_padding_rules": 25,
+        "mean_decrypt_count": 13.5,
+        "std_decrypt_count": 6.08687111741328
       },
       "2": {
-        "decrypt_time_mean_sec": 0.03206362996716052,
-        "decrypt_time_std_sec": 0.008365447562517144,
-        "reduction_pct": 91.92744598376544,
+        "decrypt_time_mean_sec": 0.03274435999337584,
+        "decrypt_time_std_sec": 0.009199615223428525,
+        "reduction_pct": 91.99533278280093,
         "num_router_rules": 3,
         "num_subtree_rules_total": 72,
-        "mean_decrypt_count": 10.1,
-        "std_decrypt_count": 2.6999999999999997
+        "num_padding_rules": 49,
+        "mean_decrypt_count": 9.5,
+        "std_decrypt_count": 2.6172504656604803
       },
       "3": {
-        "decrypt_time_mean_sec": 0.03351115003461018,
-        "decrypt_time_std_sec": 0.004454173166946171,
-        "reduction_pct": 91.5630086463199,
+        "decrypt_time_mean_sec": 0.035041309986263515,
+        "decrypt_time_std_sec": 0.00731835952093487,
+        "reduction_pct": 91.4338217222295,
         "num_router_rules": 7,
         "num_subtree_rules_total": 46,
-        "mean_decrypt_count": 10.5,
-        "std_decrypt_count": 1.2041594578792296
+        "num_padding_rules": 71,
+        "mean_decrypt_count": 10.4,
+        "std_decrypt_count": 1.2806248474865698
       },
       "4": {
-        "decrypt_time_mean_sec": 0.051743760029785334,
-        "decrypt_time_std_sec": 0.002911004919839746,
-        "reduction_pct": 86.97264476070448,
+        "decrypt_time_mean_sec": 0.057379779987968504,
+        "decrypt_time_std_sec": 0.005443358691733064,
+        "reduction_pct": 85.9729723258386,
         "num_router_rules": 15,
         "num_subtree_rules_total": 20,
+        "num_padding_rules": 89,
         "mean_decrypt_count": 16.2,
         "std_decrypt_count": 0.6
       }
@@ -46,44 +50,48 @@
   },
   "breast_cancer": {
     "num_baseline_rules": 80,
-    "baseline_decrypt_time_mean_sec": 0.2579247800051235,
-    "baseline_decrypt_time_std_sec": 0.006847722300073415,
+    "baseline_decrypt_time_mean_sec": 0.2966048200032674,
+    "baseline_decrypt_time_std_sec": 0.025262808194995438,
     "mean_baseline_decrypt_count": 80.0,
     "std_baseline_decrypt_count": 0.0,
     "router_depths": {
       "1": {
-        "decrypt_time_mean_sec": 0.031374500005040315,
-        "decrypt_time_std_sec": 0.014970636834882811,
-        "reduction_pct": 87.83579460476147,
+        "decrypt_time_mean_sec": 0.034024469985160975,
+        "decrypt_time_std_sec": 0.01649373187513287,
+        "reduction_pct": 88.52868608649511,
         "num_router_rules": 1,
         "num_subtree_rules_total": 62,
-        "mean_decrypt_count": 10.0,
-        "std_decrypt_count": 4.494441010848846
+        "num_padding_rules": 17,
+        "mean_decrypt_count": 9.2,
+        "std_decrypt_count": 4.686149805543993
       },
       "2": {
-        "decrypt_time_mean_sec": 0.02967902000527829,
-        "decrypt_time_std_sec": 0.005568989165337974,
-        "reduction_pct": 88.49314904729638,
+        "decrypt_time_mean_sec": 0.039111820003017786,
+        "decrypt_time_std_sec": 0.015145556165017518,
+        "reduction_pct": 86.81349143193731,
         "num_router_rules": 3,
         "num_subtree_rules_total": 44,
+        "num_padding_rules": 33,
         "mean_decrypt_count": 9.1,
         "std_decrypt_count": 1.57797338380595
       },
       "3": {
-        "decrypt_time_mean_sec": 0.03501986998599023,
-        "decrypt_time_std_sec": 0.0032386353700437232,
-        "reduction_pct": 86.42244844202463,
+        "decrypt_time_mean_sec": 0.03578477998962626,
+        "decrypt_time_std_sec": 0.002508849942836312,
+        "reduction_pct": 87.93519943835301,
         "num_router_rules": 7,
         "num_subtree_rules_total": 26,
-        "mean_decrypt_count": 10.7,
-        "std_decrypt_count": 0.6403124237432849
+        "num_padding_rules": 47,
+        "mean_decrypt_count": 10.8,
+        "std_decrypt_count": 0.6
       },
       "4": {
-        "decrypt_time_mean_sec": 0.041060160007327796,
-        "decrypt_time_std_sec": 0.0029233862501256936,
-        "reduction_pct": 84.08056798322667,
+        "decrypt_time_mean_sec": 0.04192499002674595,
+        "decrypt_time_std_sec": 0.0028579228250126803,
+        "reduction_pct": 85.86503414668579,
         "num_router_rules": 11,
         "num_subtree_rules_total": 12,
+        "num_padding_rules": 57,
         "mean_decrypt_count": 12.7,
         "std_decrypt_count": 0.6403124237432849
       }
@@ -91,44 +99,48 @@
   },
   "heart": {
     "num_baseline_rules": 130,
-    "baseline_decrypt_time_mean_sec": 0.4164926699944772,
-    "baseline_decrypt_time_std_sec": 0.011081887345684438,
+    "baseline_decrypt_time_mean_sec": 0.4454915800015442,
+    "baseline_decrypt_time_std_sec": 0.028322170445968884,
     "mean_baseline_decrypt_count": 130.0,
     "std_baseline_decrypt_count": 0.0,
     "router_depths": {
       "1": {
-        "decrypt_time_mean_sec": 0.05198065999429673,
-        "decrypt_time_std_sec": 0.02414397944243645,
-        "reduction_pct": 87.51942981493863,
+        "decrypt_time_mean_sec": 0.06021398002048954,
+        "decrypt_time_std_sec": 0.03595090925588549,
+        "reduction_pct": 86.48369964247566,
         "num_router_rules": 1,
         "num_subtree_rules_total": 103,
-        "mean_decrypt_count": 16.8,
-        "std_decrypt_count": 7.769169839822013
+        "num_padding_rules": 26,
+        "mean_decrypt_count": 16.9,
+        "std_decrypt_count": 9.575489543621254
       },
       "2": {
-        "decrypt_time_mean_sec": 0.03424585999455303,
-        "decrypt_time_std_sec": 0.008753531515336985,
-        "reduction_pct": 91.7775599760238,
+        "decrypt_time_mean_sec": 0.038341670006047934,
+        "decrypt_time_std_sec": 0.011388430702069272,
+        "reduction_pct": 91.39340186723281,
         "num_router_rules": 3,
         "num_subtree_rules_total": 76,
-        "mean_decrypt_count": 10.9,
-        "std_decrypt_count": 2.6627053911388696
+        "num_padding_rules": 51,
+        "mean_decrypt_count": 11.0,
+        "std_decrypt_count": 3.255764119219941
       },
       "3": {
-        "decrypt_time_mean_sec": 0.026923940004780888,
-        "decrypt_time_std_sec": 0.0037466869992740454,
-        "reduction_pct": 93.53555489820795,
+        "decrypt_time_mean_sec": 0.028854899981524795,
+        "decrypt_time_std_sec": 0.0049569912951899315,
+        "reduction_pct": 93.52290788943199,
         "num_router_rules": 5,
         "num_subtree_rules_total": 49,
-        "mean_decrypt_count": 8.3,
-        "std_decrypt_count": 1.268857754044952
+        "num_padding_rules": 76,
+        "mean_decrypt_count": 8.4,
+        "std_decrypt_count": 1.3564659966250536
       },
       "4": {
-        "decrypt_time_mean_sec": 0.041535110014956446,
-        "decrypt_time_std_sec": 0.0028445586969955525,
-        "reduction_pct": 90.02740912210838,
+        "decrypt_time_mean_sec": 0.04691966000245884,
+        "decrypt_time_std_sec": 0.004599470697095884,
+        "reduction_pct": 89.46789072819374,
         "num_router_rules": 12,
         "num_subtree_rules_total": 22,
+        "num_padding_rules": 96,
         "mean_decrypt_count": 12.7,
         "std_decrypt_count": 0.7810249675906655
       }
@@ -136,44 +148,48 @@
   },
   "framingham": {
     "num_baseline_rules": 120,
-    "baseline_decrypt_time_mean_sec": 0.38370663998648524,
-    "baseline_decrypt_time_std_sec": 0.008225258061215981,
+    "baseline_decrypt_time_mean_sec": 0.40918100002454594,
+    "baseline_decrypt_time_std_sec": 0.030407226389055853,
     "mean_baseline_decrypt_count": 120.0,
     "std_baseline_decrypt_count": 0.0,
     "router_depths": {
       "1": {
-        "decrypt_time_mean_sec": 0.034468559990637006,
-        "decrypt_time_std_sec": 0.022144926308369835,
-        "reduction_pct": 91.016949826083,
+        "decrypt_time_mean_sec": 0.035728279978502545,
+        "decrypt_time_std_sec": 0.02297266970729977,
+        "reduction_pct": 91.26834335505332,
         "num_router_rules": 1,
         "num_subtree_rules_total": 95,
-        "mean_decrypt_count": 10.8,
-        "std_decrypt_count": 6.779380502671317
+        "num_padding_rules": 24,
+        "mean_decrypt_count": 10.9,
+        "std_decrypt_count": 7.147726911403373
       },
       "2": {
-        "decrypt_time_mean_sec": 0.02784305001841858,
-        "decrypt_time_std_sec": 0.011823382029477424,
-        "reduction_pct": 92.74366218437105,
+        "decrypt_time_mean_sec": 0.027578020002692938,
+        "decrypt_time_std_sec": 0.011072115293371673,
+        "reduction_pct": 93.26019047779867,
         "num_router_rules": 3,
         "num_subtree_rules_total": 70,
-        "mean_decrypt_count": 8.6,
-        "std_decrypt_count": 3.32264954516723
+        "num_padding_rules": 47,
+        "mean_decrypt_count": 8.3,
+        "std_decrypt_count": 3.4073450074801643
       },
       "3": {
-        "decrypt_time_mean_sec": 0.03205289002507925,
-        "decrypt_time_std_sec": 0.004263690696526921,
-        "reduction_pct": 91.6465115051936,
+        "decrypt_time_mean_sec": 0.034489909990224984,
+        "decrypt_time_std_sec": 0.005134422495385285,
+        "reduction_pct": 91.5709893694585,
         "num_router_rules": 7,
         "num_subtree_rules_total": 45,
-        "mean_decrypt_count": 10.0,
-        "std_decrypt_count": 1.3416407864998738
+        "num_padding_rules": 68,
+        "mean_decrypt_count": 10.1,
+        "std_decrypt_count": 1.374772708486752
       },
       "4": {
-        "decrypt_time_mean_sec": 0.03975302001927048,
-        "decrypt_time_std_sec": 0.0017724963761864881,
-        "reduction_pct": 89.63973622643834,
+        "decrypt_time_mean_sec": 0.04011510999407619,
+        "decrypt_time_std_sec": 0.0016652150661209545,
+        "reduction_pct": 90.19624322936066,
         "num_router_rules": 11,
         "num_subtree_rules_total": 22,
+        "num_padding_rules": 87,
         "mean_decrypt_count": 12.2,
         "std_decrypt_count": 0.4
       }

@@ -8,6 +8,13 @@ Reports only the within-scheme reduction percentage and the
 underlying rule/decryption counts. Never a comparison against
 plaintext or another scheme's timing — that question is out of scope
 for this repository.
+
+The partitioned store is built to be indistinguishable from the
+baseline (c=1) store from the Cloud's side: same PRP feature-tag
+scheme, same total rule count (padded with never-decrypted fresh
+encryptions of real thresholds), same per-rule shape, no positional
+tell (see system/subtree_partitioner.py). The savings measured here
+are strictly on the User's decryption side.
 """
 
 import json
@@ -22,7 +29,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 from crypto import paillier
 from system.path_extractor import extract_paths
-from system.rule_store import build_rule_store, encode, RuleStore
+from system.rule_store import build_rule_store, RuleStore
 from system.inference_engine import CloudParty, UserParty
 from system.subtree_partitioner import (
     build_router_map, build_partitioned_rules, baseline_classify, subtree_classify,
@@ -70,13 +77,18 @@ def run_dataset(name):
     router_results = {}
     for router_depth in ROUTER_DEPTHS:
         router_map = build_router_map(paths, router_depth)
-        sub_rules, router_positions, subtree_positions = build_partitioned_rules(paths, router_depth, pub)
-        cloud_sub = CloudParty(pub, RuleStore(rules=sub_rules, public_key=pub, conceal_feature=False))
+        sub_rules, router_positions, subtree_positions = build_partitioned_rules(paths, router_depth, pub, prp_key)
+        cloud_sub = CloudParty(pub, RuleStore(rules=sub_rules, public_key=pub, conceal_feature=True))
+
+        assert len(sub_rules) == len(baseline_store.rules), (
+            "partitioned store must match the baseline's rule count so the "
+            "Cloud cannot infer that partitioning happened"
+        )
 
         sub_times, sub_decrypts = [], []
         for idx in query_idxs:
             row = X[idx].tolist()
-            tagged = {i: paillier.encrypt(encode(v), pub) for i, v in enumerate(row)}
+            tagged = user.tag_feature_vector(row)
             blinded = cloud_sub.evaluate_round(tagged)
 
             user.decrypt_count = 0
@@ -89,18 +101,23 @@ def run_dataset(name):
         sub_std = float(np.std(sub_times))
         reduction_pct = 100.0 * (baseline_mean - sub_mean) / baseline_mean
 
+        num_subtree_positions = sum(len(v) for v in subtree_positions.values())
+        num_padding_rules = len(sub_rules) - len(router_positions) - num_subtree_positions
+
         router_results[str(router_depth)] = {
             "decrypt_time_mean_sec": sub_mean,
             "decrypt_time_std_sec": sub_std,
             "reduction_pct": reduction_pct,
             "num_router_rules": len(router_positions),
-            "num_subtree_rules_total": len(sub_rules) - len(router_positions),
+            "num_subtree_rules_total": num_subtree_positions,
+            "num_padding_rules": num_padding_rules,
             "mean_decrypt_count": float(np.mean(sub_decrypts)),
             "std_decrypt_count": float(np.std(sub_decrypts)),
         }
         print(f"[{name}] router_depth={router_depth}: reduction={reduction_pct:.2f}% "
               f"(mean decrypts {router_results[str(router_depth)]['mean_decrypt_count']:.1f} "
-              f"vs baseline {np.mean(baseline_decrypts):.1f})")
+              f"vs baseline {np.mean(baseline_decrypts):.1f}, "
+              f"padding={num_padding_rules})")
 
     return {
         "num_baseline_rules": len(baseline_store.rules),

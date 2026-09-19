@@ -5,16 +5,14 @@ Storage-Linkability, and Reduced Decryption Workload for
 Privacy-Preserving Decision Tree Inference in Cloud-Assisted Medical
 Diagnosis."*
 
-This repository implements a **subset** of a larger thesis system:
-fixed-point-encoded Paillier comparison, a tunable
-storage/linkability deduplication parameter, and a router/subtree
-split that reduces the User's decryption workload. It is deliberately
-**static**: there is no rule-update, deletion, or versioning capability
-anywhere in this codebase, on purpose — that capability belongs to a
-separate paper and would create a publication conflict if mixed in
-here. This isn't just a documentation claim: no class in `system/` or
-`crypto/` has a delete/update/remove/revoke method, no data structure
-carries a deletion token or version field, and there is no batch or
+This repository implements fixed-point-encoded Paillier comparison, a
+tunable storage/linkability deduplication parameter, and a
+router/subtree split that reduces the User's decryption workload. It
+is deliberately **static** by design: there is no rule-update,
+deletion, or versioning capability anywhere in this codebase. This
+isn't just a documentation claim: no class in `system/` or `crypto/`
+has a delete/update/remove/revoke method, no data structure carries a
+deletion token or version field, and there is no batch or
 dummy-padding protocol. `tests/test_all.py` and the experiment scripts
 exercise only static, single-shot inference.
 
@@ -108,10 +106,13 @@ across rows when `c > 1`; bookkeeping is per row regardless).
   1-byte direction, a 4-byte path id, and a 1-byte label.
 
 The SDTC comparison series in `exp_storage_depth_sweep.json` uses
-SDTC's own natural unit: each decision-table entry is three 16-byte
-PRF/PRP outputs (`encrypted_key`, `encrypted_label`, `path_signature`
-— 48 bytes/entry), with one entry per root-to-leaf path and no
-cross-path sharing.
+SDTC's own natural unit: each decision-table entry is two 16-byte
+PRF/PRP outputs (`encrypted_key`, `encrypted_label` — 32 bytes/entry),
+with one entry per distinct discretized training sample (the
+data-driven "comparing method" table construction, Section 4.3 of
+Liang et al. 2021), not one per root-to-leaf path — so, unlike
+PrivPathInfer's own series, this SDTC series does not vary with tree
+depth.
 
 This is a from-scratch accounting choice, not a reproduction of any
 other paper's byte model — if these storage numbers don't match

@@ -21,6 +21,7 @@ import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 
 from crypto import paillier
+from crypto.prf_prp import prp_int
 from system.path_extractor import extract_paths
 from system.rule_store import (
     encode, decode, build_rule_store, distinct_ciphertext_count, linkability, RuleStore,
@@ -192,7 +193,7 @@ def test_subtree_matches_plaintext_and_baseline():
 
     router_depth = 1
     router_map = build_router_map(paths, router_depth)
-    sub_rules, router_positions, subtree_positions = build_partitioned_rules(paths, router_depth, pub)
+    sub_rules, router_positions, subtree_positions = build_partitioned_rules(paths, router_depth, pub, prp_key)
 
     rng = np.random.RandomState(2)
     queries = rng.uniform(0, 10, size=(15, 2))
@@ -204,14 +205,53 @@ def test_subtree_matches_plaintext_and_baseline():
         blinded_b = cloud_b.evaluate_round(tagged_b)
         got_baseline = baseline_classify(user, baseline_store.rules, blinded_b, paths)
 
-        cloud_s = CloudParty(pub, RuleStore(rules=sub_rules, public_key=pub, conceal_feature=False))
-        tagged_s = {i: paillier.encrypt(encode(v), pub) for i, v in enumerate(row.tolist())}
+        cloud_s = CloudParty(pub, RuleStore(rules=sub_rules, public_key=pub, conceal_feature=True))
+        tagged_s = user.tag_feature_vector(row.tolist())
         blinded_s = cloud_s.evaluate_round(tagged_s)
         got_subtree = subtree_classify(user, sub_rules, blinded_s, paths, router_map, router_positions, subtree_positions)
 
         assert got_baseline == expected, (row, expected, got_baseline)
         assert got_subtree == expected, (row, expected, got_subtree)
         assert got_subtree == got_baseline
+
+
+# ---------------------------------------------------------------------------
+# Partitioned store must be indistinguishable from the baseline to the Cloud
+# ---------------------------------------------------------------------------
+
+def test_partitioned_store_indistinguishable_from_baseline():
+    clf, X, y = _small_tree()
+    paths = extract_paths(clf)
+    pub, priv = paillier.keygen(bits=TEST_BITS)
+
+    baseline_store, prp_key = build_rule_store(paths, pub, c=1)
+
+    raw_feature_indices = {cond.feature_index for path in paths for cond in path.conditions}
+    expected_tags = {prp_int(prp_key, i) for i in raw_feature_indices}
+
+    for router_depth in (1, 2):
+        sub_rules, _router_positions, _subtree_positions = build_partitioned_rules(
+            paths, router_depth, pub, prp_key
+        )
+
+        # 1. Rule count must equal the baseline's — otherwise the Cloud
+        # can infer the router depth from the store's size alone.
+        assert len(sub_rules) == len(baseline_store.rules), (
+            len(sub_rules), len(baseline_store.rules), router_depth
+        )
+
+        # 2. Every rule (router, subtree, or padding) must carry a
+        # real, non-negative path_id and label — a -1 sentinel would
+        # mark a rule as a router row.
+        for rule in sub_rules:
+            assert rule.path_id >= 0, (rule, router_depth)
+            assert rule.label >= 0, (rule, router_depth)
+
+        # 3. No rule may carry a raw feature index — every feature_tag
+        # must be a PRP output matching the baseline's own tagging.
+        for rule in sub_rules:
+            assert rule.feature_tag not in raw_feature_indices, (rule, router_depth)
+            assert rule.feature_tag in expected_tags, (rule, router_depth)
 
 
 def main():
@@ -224,6 +264,7 @@ def main():
         ("dedup ciphertext count & linkability", test_dedup_ciphertext_count_and_linkability),
         ("two-round protocol matches plaintext", test_protocol_matches_plaintext),
         ("subtree partitioner matches plaintext & baseline", test_subtree_matches_plaintext_and_baseline),
+        ("partitioned store indistinguishable from baseline", test_partitioned_store_indistinguishable_from_baseline),
     ]
     for name, func in tests:
         runner.run(name, func)

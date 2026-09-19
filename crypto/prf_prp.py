@@ -30,10 +30,6 @@ Usage in PrivPathInfer:
     PRP: feature-index permutation in the rule store — the PRP-permuted
          tag conceals which plaintext feature a rule's threshold belongs
          to, so the cloud cannot infer feature identity by index alone.
-
-Author: Mst Sabekunnahar Naboni (Roll: 2007034)
-        BSc in CSE, KUET
-        Thesis: CSE 4000
 """
 
 import os
