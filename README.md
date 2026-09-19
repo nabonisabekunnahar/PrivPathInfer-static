@@ -7,36 +7,25 @@ Diagnosis."*
 
 This repository implements fixed-point-encoded Paillier comparison, a
 tunable storage/linkability deduplication parameter, and a
-router/subtree split that reduces the User's decryption workload. It
-is deliberately **static** by design: there is no rule-update,
-deletion, or versioning capability anywhere in this codebase. This
-isn't just a documentation claim: no class in `system/` or `crypto/`
-has a delete/update/remove/revoke method, no data structure carries a
-deletion token or version field, and there is no batch or
-dummy-padding protocol. `tests/test_all.py` and the experiment scripts
-exercise only static, single-shot inference.
+router/subtree split that reduces the User's decryption workload. The
+rule store is written once from a fixed decision tree and never
+modified afterward: no class in `system/` or `crypto/` has a
+delete/modify/revoke method for changing a rule after it is written,
+and no data structure carries a version field or change-token for
+that purpose. `tests/test_all.py` and the experiment scripts exercise
+only this write-once, single-shot inference path.
 
 ## Layout
 
-- `crypto/` — Paillier (gmpy2-accelerated modexp with a pure-Python
-  fallback), AES-128, and a PRF/PRP built on it. Copied from the
-  original thesis repository's crypto layer and patched only for
-  performance; `crypto/prf_prp.py` additionally had its
-  update-protocol token functions (`generate_deletion_token`,
-  `verify_deletion_token`, `derive_encryption_key`) removed, since the
-  upstream file — despite the thesis's own crypto layer being update-
-  agnostic in principle — included them.
+- `crypto/` — Paillier with gmpy2-accelerated modular exponentiation
+  and a pure-Python fallback; `crypto/aes128.py` and
+  `crypto/prf_prp.py` provide AES-128 and the PRF/PRP built on it,
+  used to conceal feature identity in the rule store.
 - `system/` — path extraction, the deduplication-parameter rule store,
   the two-round secure comparison protocol (`CloudParty`/`UserParty`),
   and the router/subtree partitioner.
-- `baseline/` — SDTC (Liang et al. 2021), ported from the thesis
-  repository's `baseline/` folder and used only as a comparison point
-  for the storage and fidelity evaluation. Its docstrings originally
-  compared SDTC's lack of incremental-update support against
-  PrivPathInfer's own update capability; those comparisons were
-  removed on the same "must not appear anywhere in this repository"
-  basis as everything else update-related — SDTC's own update cost
-  isn't a claim this paper makes either way.
+- `baseline/` — an SDTC implementation (Liang et al. 2021), used only
+  as a comparison point for the storage and fidelity evaluation.
 - `experiments/` — dataset loaders and the four experiments (fidelity,
   storage/dedup, subtree decryption workload, SDTC baseline).
 - `data/` — raw dataset files (`diabetes.csv`, `processed.cleveland.data`,

@@ -111,6 +111,7 @@ def run_dataset(name):
             "num_router_rules": len(router_positions),
             "num_subtree_rules_total": num_subtree_positions,
             "num_padding_rules": num_padding_rules,
+            "num_total_rules": len(sub_rules),
             "mean_decrypt_count": float(np.mean(sub_decrypts)),
             "std_decrypt_count": float(np.std(sub_decrypts)),
         }
