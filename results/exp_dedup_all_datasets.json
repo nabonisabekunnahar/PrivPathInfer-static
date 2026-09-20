@@ -1,0 +1,202 @@
+{
+  "pima": {
+    "target_depth": 8,
+    "actual_depth": 8,
+    "num_paths": 82,
+    "num_occurrences": 579,
+    "c_values": {
+      "1": {
+        "ciphertext_count": 579,
+        "linkability": 1,
+        "storage_kb_mean": 157.189453125,
+        "storage_kb_std": 0.0
+      },
+      "2": {
+        "ciphertext_count": 303,
+        "linkability": 2,
+        "storage_kb_mean": 81.404296875,
+        "storage_kb_std": 0.0
+      },
+      "4": {
+        "ciphertext_count": 171,
+        "linkability": 4,
+        "storage_kb_mean": 48.404296875,
+        "storage_kb_std": 0.0
+      },
+      "8": {
+        "ciphertext_count": 114,
+        "linkability": 8,
+        "storage_kb_mean": 34.154296875,
+        "storage_kb_std": 0.0
+      },
+      "16": {
+        "ciphertext_count": 91,
+        "linkability": 16,
+        "storage_kb_mean": 28.404296875,
+        "storage_kb_std": 0.0
+      },
+      "32": {
+        "ciphertext_count": 82,
+        "linkability": 32,
+        "storage_kb_mean": 26.154296875,
+        "storage_kb_std": 0.0
+      },
+      "max": {
+        "ciphertext_count": 78,
+        "linkability": 82,
+        "storage_kb_mean": 25.154296875,
+        "storage_kb_std": 0.0
+      }
+    }
+  },
+  "breast_cancer": {
+    "target_depth": 8,
+    "actual_depth": 7,
+    "num_paths": 22,
+    "num_occurrences": 109,
+    "c_values": {
+      "1": {
+        "ciphertext_count": 109,
+        "linkability": 1,
+        "storage_kb_mean": 29.591796875,
+        "storage_kb_std": 0.0
+      },
+      "2": {
+        "ciphertext_count": 58,
+        "linkability": 2,
+        "storage_kb_mean": 15.564453125,
+        "storage_kb_std": 0.0
+      },
+      "4": {
+        "ciphertext_count": 35,
+        "linkability": 4,
+        "storage_kb_mean": 9.814453125,
+        "storage_kb_std": 0.0
+      },
+      "8": {
+        "ciphertext_count": 25,
+        "linkability": 8,
+        "storage_kb_mean": 7.314453125,
+        "storage_kb_std": 0.0
+      },
+      "16": {
+        "ciphertext_count": 22,
+        "linkability": 16,
+        "storage_kb_mean": 6.564453125,
+        "storage_kb_std": 0.0
+      },
+      "32": {
+        "ciphertext_count": 21,
+        "linkability": 22,
+        "storage_kb_mean": 6.314453125,
+        "storage_kb_std": 0.0
+      },
+      "max": {
+        "ciphertext_count": 21,
+        "linkability": 22,
+        "storage_kb_mean": 6.314453125,
+        "storage_kb_std": 0.0
+      }
+    }
+  },
+  "heart": {
+    "target_depth": 8,
+    "actual_depth": 8,
+    "num_paths": 51,
+    "num_occurrences": 316,
+    "c_values": {
+      "1": {
+        "ciphertext_count": 316,
+        "linkability": 1,
+        "storage_kb_mean": 85.7890625,
+        "storage_kb_std": 0.0
+      },
+      "2": {
+        "ciphertext_count": 165,
+        "linkability": 2,
+        "storage_kb_mean": 44.3359375,
+        "storage_kb_std": 0.0
+      },
+      "4": {
+        "ciphertext_count": 93,
+        "linkability": 4,
+        "storage_kb_mean": 26.3359375,
+        "storage_kb_std": 0.0
+      },
+      "8": {
+        "ciphertext_count": 61,
+        "linkability": 8,
+        "storage_kb_mean": 18.3359375,
+        "storage_kb_std": 0.0
+      },
+      "16": {
+        "ciphertext_count": 49,
+        "linkability": 16,
+        "storage_kb_mean": 15.3359375,
+        "storage_kb_std": 0.0
+      },
+      "32": {
+        "ciphertext_count": 45,
+        "linkability": 32,
+        "storage_kb_mean": 14.3359375,
+        "storage_kb_std": 0.0
+      },
+      "max": {
+        "ciphertext_count": 42,
+        "linkability": 51,
+        "storage_kb_mean": 13.5859375,
+        "storage_kb_std": 0.0
+      }
+    }
+  },
+  "framingham": {
+    "target_depth": 8,
+    "actual_depth": 8,
+    "num_paths": 89,
+    "num_occurrences": 643,
+    "c_values": {
+      "1": {
+        "ciphertext_count": 643,
+        "linkability": 1,
+        "storage_kb_mean": 174.564453125,
+        "storage_kb_std": 0.0
+      },
+      "2": {
+        "ciphertext_count": 335,
+        "linkability": 2,
+        "storage_kb_mean": 90.029296875,
+        "storage_kb_std": 0.0
+      },
+      "4": {
+        "ciphertext_count": 189,
+        "linkability": 4,
+        "storage_kb_mean": 53.529296875,
+        "storage_kb_std": 0.0
+      },
+      "8": {
+        "ciphertext_count": 124,
+        "linkability": 8,
+        "storage_kb_mean": 37.279296875,
+        "storage_kb_std": 0.0
+      },
+      "16": {
+        "ciphertext_count": 97,
+        "linkability": 16,
+        "storage_kb_mean": 30.529296875,
+        "storage_kb_std": 0.0
+      },
+      "32": {
+        "ciphertext_count": 86,
+        "linkability": 32,
+        "storage_kb_mean": 27.779296875,
+        "storage_kb_std": 0.0
+      },
+      "max": {
+        "ciphertext_count": 80,
+        "linkability": 89,
+        "storage_kb_mean": 26.279296875,
+        "storage_kb_std": 0.0
+      }
+    }
+  }
+}

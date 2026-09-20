@@ -1,0 +1,142 @@
+{
+  "pima": {
+    "total_records": 768,
+    "bin_counts": {
+      "3": {
+        "disagreements": 244,
+        "disagreement_pct": 31.770833333333332,
+        "num_table_entries": 156,
+        "storage_kb": 4.875
+      },
+      "5": {
+        "disagreements": 240,
+        "disagreement_pct": 31.25,
+        "num_table_entries": 460,
+        "storage_kb": 14.375
+      },
+      "10": {
+        "disagreements": 142,
+        "disagreement_pct": 18.489583333333332,
+        "num_table_entries": 752,
+        "storage_kb": 23.5
+      },
+      "20": {
+        "disagreements": 100,
+        "disagreement_pct": 13.020833333333334,
+        "num_table_entries": 768,
+        "storage_kb": 24.0
+      },
+      "50": {
+        "disagreements": 46,
+        "disagreement_pct": 5.989583333333333,
+        "num_table_entries": 768,
+        "storage_kb": 24.0
+      }
+    }
+  },
+  "breast_cancer": {
+    "total_records": 569,
+    "bin_counts": {
+      "3": {
+        "disagreements": 160,
+        "disagreement_pct": 28.1195079086116,
+        "num_table_entries": 397,
+        "storage_kb": 12.40625
+      },
+      "5": {
+        "disagreements": 161,
+        "disagreement_pct": 28.29525483304042,
+        "num_table_entries": 559,
+        "storage_kb": 17.46875
+      },
+      "10": {
+        "disagreements": 71,
+        "disagreement_pct": 12.478031634446397,
+        "num_table_entries": 569,
+        "storage_kb": 17.78125
+      },
+      "20": {
+        "disagreements": 29,
+        "disagreement_pct": 5.0966608084358525,
+        "num_table_entries": 569,
+        "storage_kb": 17.78125
+      },
+      "50": {
+        "disagreements": 18,
+        "disagreement_pct": 3.1634446397188047,
+        "num_table_entries": 569,
+        "storage_kb": 17.78125
+      }
+    }
+  },
+  "heart": {
+    "total_records": 303,
+    "bin_counts": {
+      "3": {
+        "disagreements": 126,
+        "disagreement_pct": 41.584158415841586,
+        "num_table_entries": 279,
+        "storage_kb": 8.71875
+      },
+      "5": {
+        "disagreements": 87,
+        "disagreement_pct": 28.712871287128714,
+        "num_table_entries": 297,
+        "storage_kb": 9.28125
+      },
+      "10": {
+        "disagreements": 46,
+        "disagreement_pct": 15.181518151815181,
+        "num_table_entries": 301,
+        "storage_kb": 9.40625
+      },
+      "20": {
+        "disagreements": 21,
+        "disagreement_pct": 6.930693069306931,
+        "num_table_entries": 303,
+        "storage_kb": 9.46875
+      },
+      "50": {
+        "disagreements": 13,
+        "disagreement_pct": 4.29042904290429,
+        "num_table_entries": 303,
+        "storage_kb": 9.46875
+      }
+    }
+  },
+  "framingham": {
+    "total_records": 3658,
+    "bin_counts": {
+      "3": {
+        "disagreements": 64,
+        "disagreement_pct": 1.7495899398578458,
+        "num_table_entries": 1176,
+        "storage_kb": 36.75
+      },
+      "5": {
+        "disagreements": 84,
+        "disagreement_pct": 2.2963367960634224,
+        "num_table_entries": 2560,
+        "storage_kb": 80.0
+      },
+      "10": {
+        "disagreements": 84,
+        "disagreement_pct": 2.2963367960634224,
+        "num_table_entries": 3589,
+        "storage_kb": 112.15625
+      },
+      "20": {
+        "disagreements": 56,
+        "disagreement_pct": 1.5308911973756152,
+        "num_table_entries": 3656,
+        "storage_kb": 114.25
+      },
+      "50": {
+        "disagreements": 27,
+        "disagreement_pct": 0.7381082558775287,
+        "num_table_entries": 3658,
+        "storage_kb": 114.3125
+      }
+    }
+  }
+}
