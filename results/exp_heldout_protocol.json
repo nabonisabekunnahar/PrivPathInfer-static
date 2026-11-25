@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-11-25T05:20:00Z",
+    "python": "3.13.7",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "cpu_model": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "cpu_count": 8,
+    "versions": {
+      "numpy": "2.4.3",
+      "pandas": "3.0.6",
+      "sklearn": "1.8.0",
+      "gmpy2": "2.3.1",
+      "psutil": "7.2.2"
+    },
+    "tree_training": "DecisionTreeClassifier(max_depth=<depth>, random_state=42), other parameters at scikit-learn defaults",
+    "ram_gb": 7.7,
+    "git_commit": "8e73c607c68ddb7bd11abcc542d4a3101a4aa953",
+    "bits": 1024,
+    "c": "1",
+    "depth": 5,
+    "splits": 5,
+    "split_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "test_size": 0.3,
+    "stratified": true,
+    "max_per_split": null,
+    "tree_random_state": 42
+  },
+  "pima": {
+    "splits": [
+      {
+        "seed": 0,
+        "heldout_records": 231,
+        "rules": 113,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 183.21563640004024
+      },
+      {
+        "seed": 1,
+        "heldout_records": 231,
+        "rules": 131,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 182.3579283999279
+      },
+      {
+        "seed": 2,
+        "heldout_records": 231,
+        "rules": 119,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 133.61373390001245
+      },
+      {
+        "seed": 3,
+        "heldout_records": 231,
+        "rules": 118,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 134.46590060018934
+      },
+      {
+        "seed": 4,
+        "heldout_records": 231,
+        "rules": 114,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 129.56769549986348
+      }
+    ],
+    "total_heldout": 1155,
+    "total_disagreements": 0
+  },
+  "breast_cancer": {
+    "splits": [
+      {
+        "seed": 0,
+        "heldout_records": 171,
+        "rules": 80,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 84.11148189986125
+      },
+      {
+        "seed": 1,
+        "heldout_records": 171,
+        "rules": 59,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 67.76453360007145
+      },
+      {
+        "seed": 2,
+        "heldout_records": 171,
+        "rules": 63,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 70.7173846999649
+      },
+      {
+        "seed": 3,
+        "heldout_records": 171,
+        "rules": 62,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 70.25564240012318
+      },
+      {
+        "seed": 4,
+        "heldout_records": 171,
+        "rules": 68,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 75.05903069977649
+      }
+    ],
+    "total_heldout": 855,
+    "total_disagreements": 0
+  },
+  "heart": {
+    "splits": [
+      {
+        "seed": 0,
+        "heldout_records": 91,
+        "rules": 113,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 53.39931180002168
+      },
+      {
+        "seed": 1,
+        "heldout_records": 91,
+        "rules": 101,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 47.78062960016541
+      },
+      {
+        "seed": 2,
+        "heldout_records": 91,
+        "rules": 107,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 50.26914839982055
+      },
+      {
+        "seed": 3,
+        "heldout_records": 91,
+        "rules": 101,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 47.836231500143185
+      },
+      {
+        "seed": 4,
+        "heldout_records": 91,
+        "rules": 86,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 41.570982800098136
+      }
+    ],
+    "total_heldout": 455,
+    "total_disagreements": 0
+  },
+  "framingham": {
+    "splits": [
+      {
+        "seed": 0,
+        "heldout_records": 1098,
+        "rules": 125,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 710.2941787999589
+      },
+      {
+        "seed": 1,
+        "heldout_records": 1098,
+        "rules": 125,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 822.9801016999409
+      },
+      {
+        "seed": 2,
+        "heldout_records": 1098,
+        "rules": 119,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 690.3706305997912
+      },
+      {
+        "seed": 3,
+        "heldout_records": 1098,
+        "rules": 148,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 825.5355881000869
+      },
+      {
+        "seed": 4,
+        "heldout_records": 1098,
+        "rules": 119,
+        "disagreements": 0,
+        "disagreeing_indices": [],
+        "sec": 670.1834152000956
+      }
+    ],
+    "total_heldout": 5490,
+    "total_disagreements": 0
+  }
+}

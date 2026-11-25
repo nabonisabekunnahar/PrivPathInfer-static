@@ -1,0 +1,287 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-11-25T04:10:00Z",
+    "python": "3.13.7",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "cpu_model": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "cpu_count": 8,
+    "versions": {
+      "numpy": "2.4.3",
+      "pandas": "3.0.6",
+      "sklearn": "1.8.0",
+      "gmpy2": "2.3.1",
+      "psutil": "7.2.2"
+    },
+    "tree_training": "DecisionTreeClassifier(max_depth=<depth>, random_state=42), other parameters at scikit-learn defaults",
+    "ram_gb": 7.7,
+    "git_commit": "8e73c607c68ddb7bd11abcc542d4a3101a4aa953",
+    "depth": 5,
+    "splits": 5,
+    "split_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "test_size": 0.3,
+    "stratified": true,
+    "bin_counts": [
+      3,
+      5,
+      10,
+      20,
+      50
+    ],
+    "discretization": "equal-width bins per feature, fitted on the training part",
+    "note": "percentages and storage are means over splits; queries/hits/misses are sums"
+  },
+  "pima": {
+    "3": {
+      "no_entry_pct": 12.64069264069264,
+      "answered_disagree_pct": 28.608568835629296,
+      "nearest_disagree_pct": 31.68831168831169,
+      "majority_disagree_pct": 31.774891774891774,
+      "table_entries": 142.0,
+      "table_storage_bytes (modelled)": 4544.0,
+      "queries": 1155,
+      "table_hits": 1009,
+      "table_misses": 146,
+      "coverage_pct": 87.35930735930735
+    },
+    "5": {
+      "no_entry_pct": 52.2077922077922,
+      "answered_disagree_pct": 18.04492521148344,
+      "nearest_disagree_pct": 29.004329004329,
+      "majority_disagree_pct": 31.255411255411254,
+      "table_entries": 361.4,
+      "table_storage_bytes (modelled)": 11564.8,
+      "queries": 1155,
+      "table_hits": 552,
+      "table_misses": 603,
+      "coverage_pct": 47.7922077922078
+    },
+    "10": {
+      "no_entry_pct": 97.31601731601731,
+      "answered_disagree_pct": 4.0,
+      "nearest_disagree_pct": 22.77056277056277,
+      "majority_disagree_pct": 31.601731601731604,
+      "table_entries": 530.2,
+      "table_storage_bytes (modelled)": 16966.4,
+      "queries": 1155,
+      "table_hits": 31,
+      "table_misses": 1124,
+      "coverage_pct": 2.683982683982684
+    },
+    "20": {
+      "no_entry_pct": 100.0,
+      "answered_disagree_pct": null,
+      "nearest_disagree_pct": 22.251082251082252,
+      "majority_disagree_pct": 31.601731601731604,
+      "table_entries": 537.0,
+      "table_storage_bytes (modelled)": 17184.0,
+      "queries": 1155,
+      "table_hits": 0,
+      "table_misses": 1155,
+      "coverage_pct": 0.0
+    },
+    "50": {
+      "no_entry_pct": 100.0,
+      "answered_disagree_pct": null,
+      "nearest_disagree_pct": 18.874458874458874,
+      "majority_disagree_pct": 31.601731601731604,
+      "table_entries": 537.0,
+      "table_storage_bytes (modelled)": 17184.0,
+      "queries": 1155,
+      "table_hits": 0,
+      "table_misses": 1155,
+      "coverage_pct": 0.0
+    }
+  },
+  "breast_cancer": {
+    "3": {
+      "no_entry_pct": 69.23976608187135,
+      "answered_disagree_pct": 4.709834322171011,
+      "nearest_disagree_pct": 36.25730994152047,
+      "majority_disagree_pct": 38.01169590643275,
+      "table_entries": 309.2,
+      "table_storage_bytes (modelled)": 9894.4,
+      "queries": 855,
+      "table_hits": 263,
+      "table_misses": 592,
+      "coverage_pct": 30.760233918128655
+    },
+    "5": {
+      "no_entry_pct": 98.47953216374269,
+      "answered_disagree_pct": 0.0,
+      "nearest_disagree_pct": 31.812865497076025,
+      "majority_disagree_pct": 38.01169590643275,
+      "table_entries": 395.8,
+      "table_storage_bytes (modelled)": 12665.6,
+      "queries": 855,
+      "table_hits": 13,
+      "table_misses": 842,
+      "coverage_pct": 1.5204678362573099
+    },
+    "10": {
+      "no_entry_pct": 100.0,
+      "answered_disagree_pct": null,
+      "nearest_disagree_pct": 19.064327485380115,
+      "majority_disagree_pct": 38.01169590643275,
+      "table_entries": 398.0,
+      "table_storage_bytes (modelled)": 12736.0,
+      "queries": 855,
+      "table_hits": 0,
+      "table_misses": 855,
+      "coverage_pct": 0.0
+    },
+    "20": {
+      "no_entry_pct": 100.0,
+      "answered_disagree_pct": null,
+      "nearest_disagree_pct": 12.631578947368421,
+      "majority_disagree_pct": 38.01169590643275,
+      "table_entries": 398.0,
+      "table_storage_bytes (modelled)": 12736.0,
+      "queries": 855,
+      "table_hits": 0,
+      "table_misses": 855,
+      "coverage_pct": 0.0
+    },
+    "50": {
+      "no_entry_pct": 100.0,
+      "answered_disagree_pct": null,
+      "nearest_disagree_pct": 8.538011695906432,
+      "majority_disagree_pct": 38.01169590643275,
+      "table_entries": 398.0,
+      "table_storage_bytes (modelled)": 12736.0,
+      "queries": 855,
+      "table_hits": 0,
+      "table_misses": 855,
+      "coverage_pct": 0.0
+    }
+  },
+  "heart": {
+    "3": {
+      "no_entry_pct": 88.57142857142858,
+      "answered_disagree_pct": 31.565656565656564,
+      "nearest_disagree_pct": 39.78021978021978,
+      "majority_disagree_pct": 40.43956043956044,
+      "table_entries": 198.8,
+      "table_storage_bytes (modelled)": 6361.6,
+      "queries": 455,
+      "table_hits": 52,
+      "table_misses": 403,
+      "coverage_pct": 11.428571428571427
+    },
+    "5": {
+      "no_entry_pct": 97.58241758241758,
+      "answered_disagree_pct": 6.666666666666667,
+      "nearest_disagree_pct": 31.64835164835165,
+      "majority_disagree_pct": 39.34065934065934,
+      "table_entries": 209.6,
+      "table_storage_bytes (modelled)": 6707.2,
+      "queries": 455,
+      "table_hits": 11,
+      "table_misses": 444,
+      "coverage_pct": 2.4175824175824174
+    },
+    "10": {
+      "no_entry_pct": 99.34065934065934,
+      "answered_disagree_pct": 0.0,
+      "nearest_disagree_pct": 16.923076923076923,
+      "majority_disagree_pct": 39.56043956043956,
+      "table_entries": 211.6,
+      "table_storage_bytes (modelled)": 6771.2,
+      "queries": 455,
+      "table_hits": 3,
+      "table_misses": 452,
+      "coverage_pct": 0.6593406593406594
+    },
+    "20": {
+      "no_entry_pct": 99.78021978021978,
+      "answered_disagree_pct": 0.0,
+      "nearest_disagree_pct": 16.263736263736263,
+      "majority_disagree_pct": 39.56043956043956,
+      "table_entries": 211.6,
+      "table_storage_bytes (modelled)": 6771.2,
+      "queries": 455,
+      "table_hits": 1,
+      "table_misses": 454,
+      "coverage_pct": 0.2197802197802198
+    },
+    "50": {
+      "no_entry_pct": 100.0,
+      "answered_disagree_pct": null,
+      "nearest_disagree_pct": 18.021978021978022,
+      "majority_disagree_pct": 39.56043956043956,
+      "table_entries": 212.0,
+      "table_storage_bytes (modelled)": 6784.0,
+      "queries": 455,
+      "table_hits": 0,
+      "table_misses": 455,
+      "coverage_pct": 0.0
+    }
+  },
+  "framingham": {
+    "3": {
+      "no_entry_pct": 24.735883424408016,
+      "answered_disagree_pct": 18.050663227431514,
+      "nearest_disagree_pct": 18.779599271402553,
+      "majority_disagree_pct": 16.57559198542805,
+      "table_entries": 1057.6,
+      "table_storage_bytes (modelled)": 33843.2,
+      "queries": 5490,
+      "table_hits": 4132,
+      "table_misses": 1358,
+      "coverage_pct": 75.264116575592
+    },
+    "5": {
+      "no_entry_pct": 66.30236794171222,
+      "answered_disagree_pct": 6.213505212292257,
+      "nearest_disagree_pct": 9.453551912568306,
+      "majority_disagree_pct": 5.7923497267759565,
+      "table_entries": 2018.6,
+      "table_storage_bytes (modelled)": 64595.2,
+      "queries": 5490,
+      "table_hits": 1850,
+      "table_misses": 3640,
+      "coverage_pct": 33.697632058287795
+    },
+    "10": {
+      "no_entry_pct": 97.90528233151184,
+      "answered_disagree_pct": 0.9090909090909092,
+      "nearest_disagree_pct": 4.7176684881602915,
+      "majority_disagree_pct": 3.7158469945355193,
+      "table_entries": 2539.4,
+      "table_storage_bytes (modelled)": 81260.8,
+      "queries": 5490,
+      "table_hits": 115,
+      "table_misses": 5375,
+      "coverage_pct": 2.09471766848816
+    },
+    "20": {
+      "no_entry_pct": 99.98178506375227,
+      "answered_disagree_pct": 0.0,
+      "nearest_disagree_pct": 4.918032786885246,
+      "majority_disagree_pct": 3.7158469945355193,
+      "table_entries": 2558.4,
+      "table_storage_bytes (modelled)": 81868.8,
+      "queries": 5490,
+      "table_hits": 1,
+      "table_misses": 5489,
+      "coverage_pct": 0.01821493624772313
+    },
+    "50": {
+      "no_entry_pct": 100.0,
+      "answered_disagree_pct": null,
+      "nearest_disagree_pct": 3.8069216757741344,
+      "majority_disagree_pct": 3.7158469945355193,
+      "table_entries": 2560.0,
+      "table_storage_bytes (modelled)": 81920.0,
+      "queries": 5490,
+      "table_hits": 0,
+      "table_misses": 5490,
+      "coverage_pct": 0.0
+    }
+  }
+}

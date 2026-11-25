@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-11-25T04:16:48Z",
+    "python": "3.13.7",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "cpu_model": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "cpu_count": 8,
+    "versions": {
+      "numpy": "2.4.3",
+      "pandas": "3.0.6",
+      "sklearn": "1.8.0",
+      "gmpy2": "2.3.1",
+      "psutil": "7.2.2"
+    },
+    "tree_training": "DecisionTreeClassifier(max_depth=<depth>, random_state=42), other parameters at scikit-learn defaults",
+    "ram_gb": 7.7,
+    "git_commit": "8e73c607c68ddb7bd11abcc542d4a3101a4aa953",
+    "bits": 1024,
+    "dataset": "pima",
+    "depth": 5,
+    "rng_seed": 0
+  },
+  "thresholds_attacked": 12,
+  "bisection_success": 12,
+  "gcd_success": 12,
+  "mean_bisection_queries": 19.0,
+  "mean_gcd_repeats": 4.583333333333333,
+  "rows": [
+    {
+      "feature": 1,
+      "threshold": 127.5,
+      "bisection_queries": 21,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 5,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 7,
+      "threshold": 28.5,
+      "bisection_queries": 19,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 4,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 5,
+      "threshold": 45.39999961853027,
+      "bisection_queries": 20,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 7,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 5,
+      "threshold": 30.949999809265137,
+      "bisection_queries": 19,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 5,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 0,
+      "threshold": 7.5,
+      "bisection_queries": 18,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 4,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 6,
+      "threshold": 0.5005000084638596,
+      "bisection_queries": 15,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 4,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 4,
+      "threshold": 180.0,
+      "bisection_queries": 23,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 5,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 5,
+      "threshold": 26.350000381469727,
+      "bisection_queries": 19,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 4,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 5,
+      "threshold": 9.649999618530273,
+      "bisection_queries": 19,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 4,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 1,
+      "threshold": 99.5,
+      "bisection_queries": 20,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 5,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 1,
+      "threshold": 28.5,
+      "bisection_queries": 21,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 4,
+      "gcd_recovers_encoded_threshold": true
+    },
+    {
+      "feature": 6,
+      "threshold": 0.5609999895095825,
+      "bisection_queries": 14,
+      "bisection_recovers_encoded_threshold": true,
+      "gcd_repeats_until_stable": 4,
+      "gcd_recovers_encoded_threshold": true
+    }
+  ],
+  "reading": "Thresholds are protected from the cloud, not from the querying user."
+}

@@ -1,0 +1,810 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-11-25T04:13:56Z",
+    "python": "3.13.7",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "cpu_model": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "cpu_count": 8,
+    "versions": {
+      "numpy": "2.4.3",
+      "pandas": "3.0.6",
+      "sklearn": "1.8.0",
+      "gmpy2": "2.3.1",
+      "psutil": "7.2.2"
+    },
+    "tree_training": "DecisionTreeClassifier(max_depth=<depth>, random_state=42), other parameters at scikit-learn defaults",
+    "ram_gb": 7.7,
+    "git_commit": "8e73c607c68ddb7bd11abcc542d4a3101a4aa953",
+    "bits": 1024,
+    "depth": 5,
+    "scale": 10000,
+    "offset": 1000000000,
+    "split_seeds": "0-4 (stratified 70/30)",
+    "tree_random_state": 42
+  },
+  "part1_encoding_audit": {
+    "grid_values_tested": 3000000,
+    "grid_values_encoded_one_unit_low": 185858,
+    "fraction": 0.06195266666666667,
+    "examples": [
+      [
+        0.0003,
+        2
+      ],
+      [
+        0.0006,
+        5
+      ],
+      [
+        0.0012,
+        11
+      ],
+      [
+        0.0024,
+        23
+      ],
+      [
+        0.0029,
+        28
+      ]
+    ],
+    "encode_uses": "int(v * 10000) + 10**9 (truncation toward zero); for v >= 0 this equals floor, for v < 0 it does not",
+    "datasets": {
+      "pima": {
+        "values": 6144,
+        "negative_values": 0,
+        "values_with_more_than_4_decimals": 0,
+        "on_grid_values_encoded_one_unit_low": 61,
+        "distinct_raw_values_merged_by_encoding": 0
+      },
+      "breast_cancer": {
+        "values": 17070,
+        "negative_values": 0,
+        "values_with_more_than_4_decimals": 5960,
+        "on_grid_values_encoded_one_unit_low": 545,
+        "distinct_raw_values_merged_by_encoding": 2727
+      },
+      "heart": {
+        "values": 3939,
+        "negative_values": 0,
+        "values_with_more_than_4_decimals": 0,
+        "on_grid_values_encoded_one_unit_low": 0,
+        "distinct_raw_values_merged_by_encoding": 0
+      },
+      "framingham": {
+        "values": 54870,
+        "negative_values": 0,
+        "values_with_more_than_4_decimals": 0,
+        "on_grid_values_encoded_one_unit_low": 185,
+        "distinct_raw_values_merged_by_encoding": 0
+      }
+    }
+  },
+  "part2_threshold_adjacent": {
+    "pima": {
+      "thresholds": 23,
+      "by_offset": {
+        "-2e-03": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-03": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-2e-04": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-04": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-5e-05": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-05": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+0e+00": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-05": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 15,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+5e-05": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 15,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-04": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+2e-04": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-03": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+2e-03": {
+          "cases": 23,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        }
+      }
+    },
+    "breast_cancer": {
+      "thresholds": 17,
+      "by_offset": {
+        "-2e-03": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-03": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-2e-04": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-04": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-5e-05": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-05": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+0e+00": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-05": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 10,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+5e-05": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 7,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-04": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+2e-04": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-03": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+2e-03": {
+          "cases": 17,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        }
+      }
+    },
+    "heart": {
+      "thresholds": 21,
+      "by_offset": {
+        "-2e-03": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-03": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-2e-04": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-04": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-5e-05": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-05": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+0e+00": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-05": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 20,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+5e-05": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 20,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-04": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+2e-04": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-03": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+2e-03": {
+          "cases": 21,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        }
+      }
+    },
+    "framingham": {
+      "thresholds": 22,
+      "by_offset": {
+        "-2e-03": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-03": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-2e-04": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-04": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-5e-05": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "-1e-05": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+0e+00": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-05": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 22,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+5e-05": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 22,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-04": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 2,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+2e-04": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+1e-03": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        },
+        "+2e-03": {
+          "cases": 22,
+          "plaintext_vs_encoded_differ": 0,
+          "encoded_vs_protocol_differ": 0
+        }
+      }
+    }
+  },
+  "part3_extreme_values": {
+    "supported_input_range_note": "encode() is non-negative only for v >= -100000.0; encrypt() rejects plaintexts outside [0, n)",
+    "cases": [
+      {
+        "x": -1000000.0,
+        "theta": 0.0,
+        "plaintext": "left",
+        "encoded_x": -9000000000,
+        "protocol": "ERROR AssertionError",
+        "agrees": false
+      },
+      {
+        "x": -1000000.0,
+        "theta": 126.5,
+        "plaintext": "left",
+        "encoded_x": -9000000000,
+        "protocol": "ERROR AssertionError",
+        "agrees": false
+      },
+      {
+        "x": -100001.0,
+        "theta": 0.0,
+        "plaintext": "left",
+        "encoded_x": -10000,
+        "protocol": "ERROR AssertionError",
+        "agrees": false
+      },
+      {
+        "x": -100001.0,
+        "theta": 126.5,
+        "plaintext": "left",
+        "encoded_x": -10000,
+        "protocol": "ERROR AssertionError",
+        "agrees": false
+      },
+      {
+        "x": -100000.0,
+        "theta": 0.0,
+        "plaintext": "left",
+        "encoded_x": 0,
+        "protocol": "left",
+        "agrees": true
+      },
+      {
+        "x": -100000.0,
+        "theta": 126.5,
+        "plaintext": "left",
+        "encoded_x": 0,
+        "protocol": "left",
+        "agrees": true
+      },
+      {
+        "x": -1.0,
+        "theta": 0.0,
+        "plaintext": "left",
+        "encoded_x": 999990000,
+        "protocol": "left",
+        "agrees": true
+      },
+      {
+        "x": -1.0,
+        "theta": 126.5,
+        "plaintext": "left",
+        "encoded_x": 999990000,
+        "protocol": "left",
+        "agrees": true
+      },
+      {
+        "x": -5e-05,
+        "theta": 0.0,
+        "plaintext": "left",
+        "encoded_x": 1000000000,
+        "protocol": "left",
+        "agrees": true
+      },
+      {
+        "x": -5e-05,
+        "theta": 126.5,
+        "plaintext": "left",
+        "encoded_x": 1000000000,
+        "protocol": "left",
+        "agrees": true
+      },
+      {
+        "x": 0.0,
+        "theta": 0.0,
+        "plaintext": "left",
+        "encoded_x": 1000000000,
+        "protocol": "left",
+        "agrees": true
+      },
+      {
+        "x": 0.0,
+        "theta": 126.5,
+        "plaintext": "left",
+        "encoded_x": 1000000000,
+        "protocol": "left",
+        "agrees": true
+      },
+      {
+        "x": 126.5,
+        "theta": 0.0,
+        "plaintext": "right",
+        "encoded_x": 1001265000,
+        "protocol": "right",
+        "agrees": true
+      },
+      {
+        "x": 126.5,
+        "theta": 126.5,
+        "plaintext": "left",
+        "encoded_x": 1001265000,
+        "protocol": "left",
+        "agrees": true
+      },
+      {
+        "x": 1000000.0,
+        "theta": 0.0,
+        "plaintext": "right",
+        "encoded_x": 11000000000,
+        "protocol": "right",
+        "agrees": true
+      },
+      {
+        "x": 1000000.0,
+        "theta": 126.5,
+        "plaintext": "right",
+        "encoded_x": 11000000000,
+        "protocol": "right",
+        "agrees": true
+      },
+      {
+        "x": 1000000000000.0,
+        "theta": 0.0,
+        "plaintext": "right",
+        "encoded_x": 10000001000000000,
+        "protocol": "right",
+        "agrees": true
+      },
+      {
+        "x": 1000000000000.0,
+        "theta": 126.5,
+        "plaintext": "right",
+        "encoded_x": 10000001000000000,
+        "protocol": "right",
+        "agrees": true
+      },
+      {
+        "x": 1e+30,
+        "theta": 0.0,
+        "plaintext": "right",
+        "encoded_x": "~1e34",
+        "protocol": "right",
+        "agrees": true
+      },
+      {
+        "x": 1e+30,
+        "theta": 126.5,
+        "plaintext": "right",
+        "encoded_x": "~1e34",
+        "protocol": "right",
+        "agrees": true
+      },
+      {
+        "x": 1e+200,
+        "theta": 0.0,
+        "plaintext": "right",
+        "encoded_x": "~1e203",
+        "protocol": "right",
+        "agrees": true
+      },
+      {
+        "x": 1e+200,
+        "theta": 126.5,
+        "plaintext": "right",
+        "encoded_x": "~1e203",
+        "protocol": "right",
+        "agrees": true
+      }
+    ]
+  },
+  "part4_wraparound": {
+    "condition": "sign is correct iff |x_enc - theta_enc| * r < n/2, with r in [1, 2^64)",
+    "bounds_by_key_size": {
+      "1024": {
+        "safe_abs_encoded_difference_log10": 288.7,
+        "safe_abs_feature_difference_log10": 284.7
+      },
+      "2048": {
+        "safe_abs_encoded_difference_log10": 596.9,
+        "safe_abs_feature_difference_log10": 592.9
+      },
+      "3072": {
+        "safe_abs_encoded_difference_log10": 905.2,
+        "safe_abs_feature_difference_log10": 901.2
+      }
+    },
+    "demo": {
+      "demo_key_bits": 128,
+      "safe_bound_encoded": 7761834698386197157,
+      "trials": 200,
+      "below_bound": {
+        "difference": 1940458674596549289,
+        "wrong_sign": 0
+      },
+      "far_above_bound": {
+        "difference": 1180591620717411303424,
+        "wrong_sign": 86
+      }
+    }
+  },
+  "part5_precision_sweep": {
+    "pima": {
+      "records": 768,
+      "float64_plaintext_vs_sklearn_classification": 0,
+      "by_scale": {
+        "1e2": {
+          "encoding_distinct_values_merged": 387,
+          "values_with_more_decimals_than_scale": 693,
+          "comparison_mismatch": {
+            "mismatches": 22,
+            "comparisons": 19200
+          },
+          "classification_mismatch_all_records": 1,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 3,
+            "records": 1155
+          }
+        },
+        "1e4": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 19200
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 1155
+          }
+        },
+        "1e6": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 19200
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 1155
+          }
+        },
+        "1e8": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 19200
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 1155
+          }
+        }
+      }
+    },
+    "breast_cancer": {
+      "records": 569,
+      "float64_plaintext_vs_sklearn_classification": 0,
+      "by_scale": {
+        "1e2": {
+          "encoding_distinct_values_merged": 9781,
+          "values_with_more_decimals_than_scale": 11810,
+          "comparison_mismatch": {
+            "mismatches": 569,
+            "comparisons": 9673
+          },
+          "classification_mismatch_all_records": 10,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 63,
+            "records": 855
+          }
+        },
+        "1e4": {
+          "encoding_distinct_values_merged": 2727,
+          "values_with_more_decimals_than_scale": 5960,
+          "comparison_mismatch": {
+            "mismatches": 4,
+            "comparisons": 9673
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 855
+          }
+        },
+        "1e6": {
+          "encoding_distinct_values_merged": 2,
+          "values_with_more_decimals_than_scale": 6,
+          "comparison_mismatch": {
+            "mismatches": 3,
+            "comparisons": 9673
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 855
+          }
+        },
+        "1e8": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 3,
+            "comparisons": 9673
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 855
+          }
+        }
+      }
+    },
+    "heart": {
+      "records": 303,
+      "float64_plaintext_vs_sklearn_classification": 0,
+      "by_scale": {
+        "1e2": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 7878
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 455
+          }
+        },
+        "1e4": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 7878
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 455
+          }
+        },
+        "1e6": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 7878
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 455
+          }
+        },
+        "1e8": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 7878
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 455
+          }
+        }
+      }
+    },
+    "framingham": {
+      "records": 3658,
+      "float64_plaintext_vs_sklearn_classification": 0,
+      "by_scale": {
+        "1e2": {
+          "encoding_distinct_values_merged": 22,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 87792
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 5490
+          }
+        },
+        "1e4": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 87792
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 5490
+          }
+        },
+        "1e6": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 87792
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 5490
+          }
+        },
+        "1e8": {
+          "encoding_distinct_values_merged": 0,
+          "values_with_more_decimals_than_scale": 0,
+          "comparison_mismatch": {
+            "mismatches": 0,
+            "comparisons": 87792
+          },
+          "classification_mismatch_all_records": 0,
+          "classification_mismatch_heldout_5_splits": {
+            "mismatches": 0,
+            "records": 5490
+          }
+        }
+      }
+    }
+  }
+}

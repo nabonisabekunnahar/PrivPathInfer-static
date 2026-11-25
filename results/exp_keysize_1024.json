@@ -1,0 +1,404 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-11-25T04:17:17Z",
+    "python": "3.13.7",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "cpu_model": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "cpu_count": 8,
+    "versions": {
+      "numpy": "2.4.3",
+      "pandas": "3.0.6",
+      "sklearn": "1.8.0",
+      "gmpy2": "2.3.1",
+      "psutil": "7.2.2"
+    },
+    "tree_training": "DecisionTreeClassifier(max_depth=<depth>, random_state=42), other parameters at scikit-learn defaults",
+    "ram_gb": 7.7,
+    "git_commit": "8e73c607c68ddb7bd11abcc542d4a3101a4aa953",
+    "bits": 1024,
+    "keygen_sec": 0.08038899977691472,
+    "gmpy2": true,
+    "tree_depth": 5,
+    "queries_per_config": 20,
+    "query_selection_seed": 0,
+    "tree_random_state": 42,
+    "peak_rss_mb": 142.17578125,
+    "total_sec": 107.35081549989991
+  },
+  "pima": {
+    "n_features": 8,
+    "n_paths": 26,
+    "queries": 20,
+    "mean_comparisons_per_path": 4.9,
+    "c=1": {
+      "rules": 124,
+      "distinct_ciphertexts": 124,
+      "linkability": 1,
+      "store_bytes": 34472,
+      "build_sec": 0.43725720001384616,
+      "user_encrypt_sec": {
+        "mean": 0.03648028001189232,
+        "std": 0.010799428115564393
+      },
+      "encrypt_per_value_sec": 0.00456003500148654,
+      "server_sec": {
+        "mean": 0.22693570997798815,
+        "std": 0.027139691788545934
+      },
+      "server_per_comparison_sec": 0.001830126693370872,
+      "user_decrypt_all_sec": {
+        "mean": 0.3958521150285378,
+        "std": 0.01929246458726235
+      },
+      "path_matching_sec (tree traversal)": {
+        "mean": 9.692998137325048e-05,
+        "std": 1.910433247889743e-05
+      },
+      "per_decrypt_sec": {
+        "mean": 0.003192355766359176,
+        "std": 0.00015558439183276082
+      },
+      "path_follow_est_sec (derived)": 0.01564254325515996,
+      "end_to_end_sec (measured, decrypt-all)": {
+        "mean": 0.6593650349997915,
+        "std": 0.05104397944540696
+      },
+      "ciphertext_bytes": 256,
+      "messages": {
+        "client_to_server": 1,
+        "server_to_client": 1,
+        "round_trips": 1
+      },
+      "query_bytes": 2048,
+      "response_bytes": 31744,
+      "total_communication_bytes": 33792,
+      "agreement_with_plaintext": "20/20"
+    },
+    "c=max": {
+      "rules": 124,
+      "distinct_ciphertexts": 25,
+      "linkability": 26,
+      "store_bytes": 7640,
+      "build_sec": 0.08785120001994073,
+      "user_encrypt_sec": {
+        "mean": 0.02594153000973165,
+        "std": 0.000984474051735329
+      },
+      "encrypt_per_value_sec": 0.0032426912512164563,
+      "server_sec": {
+        "mean": 0.21524521498940885,
+        "std": 0.008485439789615985
+      },
+      "server_per_comparison_sec": 0.0017358485079791036,
+      "user_decrypt_all_sec": {
+        "mean": 0.3849922550027259,
+        "std": 0.011793470614437725
+      },
+      "path_matching_sec (tree traversal)": {
+        "mean": 8.548501646146178e-05,
+        "std": 8.618166820543418e-06
+      },
+      "per_decrypt_sec": {
+        "mean": 0.0031047762500219828,
+        "std": 9.510863398740103e-05
+      },
+      "path_follow_est_sec (derived)": 0.015213403625107716,
+      "end_to_end_sec (measured, decrypt-all)": {
+        "mean": 0.6262644850183279,
+        "std": 0.01799660357648495
+      },
+      "ciphertext_bytes": 256,
+      "messages": {
+        "client_to_server": 1,
+        "server_to_client": 1,
+        "round_trips": 1
+      },
+      "query_bytes": 2048,
+      "response_bytes": 31744,
+      "total_communication_bytes": 33792,
+      "agreement_with_plaintext": "20/20"
+    }
+  },
+  "breast_cancer": {
+    "n_features": 30,
+    "n_paths": 18,
+    "queries": 20,
+    "mean_comparisons_per_path": 4.6,
+    "c=1": {
+      "rules": 80,
+      "distinct_ciphertexts": 80,
+      "linkability": 1,
+      "store_bytes": 22240,
+      "build_sec": 0.2734194998629391,
+      "user_encrypt_sec": {
+        "mean": 0.12944860501447691,
+        "std": 0.0041363132248355226
+      },
+      "encrypt_per_value_sec": 0.004314953500482564,
+      "server_sec": {
+        "mean": 0.142522550013382,
+        "std": 0.0038063503270611516
+      },
+      "server_per_comparison_sec": 0.0017815318751672748,
+      "user_decrypt_all_sec": {
+        "mean": 0.2543986849952489,
+        "std": 0.006645346699119341
+      },
+      "path_matching_sec (tree traversal)": {
+        "mean": 7.375497370958329e-05,
+        "std": 1.495661501985323e-05
+      },
+      "per_decrypt_sec": {
+        "mean": 0.0031799835624406114,
+        "std": 8.30668337389918e-05
+      },
+      "path_follow_est_sec (derived)": 0.014627924387226812,
+      "end_to_end_sec (measured, decrypt-all)": {
+        "mean": 0.5264435949968174,
+        "std": 0.011750927470664217
+      },
+      "ciphertext_bytes": 256,
+      "messages": {
+        "client_to_server": 1,
+        "server_to_client": 1,
+        "round_trips": 1
+      },
+      "query_bytes": 7680,
+      "response_bytes": 20480,
+      "total_communication_bytes": 28160,
+      "agreement_with_plaintext": "20/20"
+    },
+    "c=max": {
+      "rules": 80,
+      "distinct_ciphertexts": 17,
+      "linkability": 18,
+      "store_bytes": 5152,
+      "build_sec": 0.061226399848237634,
+      "user_encrypt_sec": {
+        "mean": 0.1021808700170368,
+        "std": 0.0040352774178390866
+      },
+      "encrypt_per_value_sec": 0.003406029000567893,
+      "server_sec": {
+        "mean": 0.1470883450121619,
+        "std": 0.008640244216345513
+      },
+      "server_per_comparison_sec": 0.0018386043126520236,
+      "user_decrypt_all_sec": {
+        "mean": 0.26216448000632225,
+        "std": 0.014442868900735557
+      },
+      "path_matching_sec (tree traversal)": {
+        "mean": 9.632501751184463e-05,
+        "std": 7.379158812248028e-05
+      },
+      "per_decrypt_sec": {
+        "mean": 0.0032770560000790283,
+        "std": 0.00018053586125919445
+      },
+      "path_follow_est_sec (derived)": 0.01507445760036353,
+      "end_to_end_sec (measured, decrypt-all)": {
+        "mean": 0.5115300200530328,
+        "std": 0.020189037953238124
+      },
+      "ciphertext_bytes": 256,
+      "messages": {
+        "client_to_server": 1,
+        "server_to_client": 1,
+        "round_trips": 1
+      },
+      "query_bytes": 7680,
+      "response_bytes": 20480,
+      "total_communication_bytes": 28160,
+      "agreement_with_plaintext": "20/20"
+    }
+  },
+  "heart": {
+    "n_features": 13,
+    "n_paths": 27,
+    "queries": 20,
+    "mean_comparisons_per_path": 4.65,
+    "c=1": {
+      "rules": 130,
+      "distinct_ciphertexts": 130,
+      "linkability": 1,
+      "store_bytes": 36140,
+      "build_sec": 0.4598153999540955,
+      "user_encrypt_sec": {
+        "mean": 0.05676690501859412,
+        "std": 0.0018870990343455652
+      },
+      "encrypt_per_value_sec": 0.004366685001430317,
+      "server_sec": {
+        "mean": 0.22922853499185294,
+        "std": 0.009620821473385896
+      },
+      "server_per_comparison_sec": 0.0017632964230142533,
+      "user_decrypt_all_sec": {
+        "mean": 0.411456210014876,
+        "std": 0.01053294301349386
+      },
+      "path_matching_sec (tree traversal)": {
+        "mean": 9.458496933802962e-05,
+        "std": 1.4205105420379081e-05
+      },
+      "per_decrypt_sec": {
+        "mean": 0.0031650477693452,
+        "std": 8.102263856533742e-05
+      },
+      "path_follow_est_sec (derived)": 0.01471747212745518,
+      "end_to_end_sec (measured, decrypt-all)": {
+        "mean": 0.6975462349946611,
+        "std": 0.015268975980512025
+      },
+      "ciphertext_bytes": 256,
+      "messages": {
+        "client_to_server": 1,
+        "server_to_client": 1,
+        "round_trips": 1
+      },
+      "query_bytes": 3328,
+      "response_bytes": 33280,
+      "total_communication_bytes": 36608,
+      "agreement_with_plaintext": "20/20"
+    },
+    "c=max": {
+      "rules": 130,
+      "distinct_ciphertexts": 22,
+      "linkability": 27,
+      "store_bytes": 6932,
+      "build_sec": 0.07658719993196428,
+      "user_encrypt_sec": {
+        "mean": 0.043364590010605754,
+        "std": 0.0033171638926174953
+      },
+      "encrypt_per_value_sec": 0.0033357376931235196,
+      "server_sec": {
+        "mean": 0.22825492500560357,
+        "std": 0.012311828624730247
+      },
+      "server_per_comparison_sec": 0.0017558071154277198,
+      "user_decrypt_all_sec": {
+        "mean": 0.4207855549873784,
+        "std": 0.044479141270064707
+      },
+      "path_matching_sec (tree traversal)": {
+        "mean": 8.593999082222581e-05,
+        "std": 1.2964521774477582e-05
+      },
+      "per_decrypt_sec": {
+        "mean": 0.0032368119614413723,
+        "std": 0.00034214724053895936
+      },
+      "path_follow_est_sec (derived)": 0.015051175620702382,
+      "end_to_end_sec (measured, decrypt-all)": {
+        "mean": 0.6924910099944099,
+        "std": 0.04552567142879835
+      },
+      "ciphertext_bytes": 256,
+      "messages": {
+        "client_to_server": 1,
+        "server_to_client": 1,
+        "round_trips": 1
+      },
+      "query_bytes": 3328,
+      "response_bytes": 33280,
+      "total_communication_bytes": 36608,
+      "agreement_with_plaintext": "20/20"
+    }
+  },
+  "framingham": {
+    "n_features": 15,
+    "n_paths": 25,
+    "queries": 20,
+    "mean_comparisons_per_path": 5.0,
+    "c=1": {
+      "rules": 120,
+      "distinct_ciphertexts": 120,
+      "linkability": 1,
+      "store_bytes": 33360,
+      "build_sec": 0.43021570006385446,
+      "user_encrypt_sec": {
+        "mean": 0.06426523999543861,
+        "std": 0.003199147322546183
+      },
+      "encrypt_per_value_sec": 0.00428434933302924,
+      "server_sec": {
+        "mean": 0.21100602501537652,
+        "std": 0.0050826690440394905
+      },
+      "server_per_comparison_sec": 0.0017583835417948044,
+      "user_decrypt_all_sec": {
+        "mean": 0.3780507449875586,
+        "std": 0.014291913693141702
+      },
+      "path_matching_sec (tree traversal)": {
+        "mean": 8.214000845327974e-05,
+        "std": 5.8919722165926026e-06
+      },
+      "per_decrypt_sec": {
+        "mean": 0.0031504228748963216,
+        "std": 0.00011909928077618085
+      },
+      "path_follow_est_sec (derived)": 0.015752114374481607,
+      "end_to_end_sec (measured, decrypt-all)": {
+        "mean": 0.653404150006827,
+        "std": 0.017101330007652404
+      },
+      "ciphertext_bytes": 256,
+      "messages": {
+        "client_to_server": 1,
+        "server_to_client": 1,
+        "round_trips": 1
+      },
+      "query_bytes": 3840,
+      "response_bytes": 30720,
+      "total_communication_bytes": 34560,
+      "agreement_with_plaintext": "20/20"
+    },
+    "c=max": {
+      "rules": 120,
+      "distinct_ciphertexts": 22,
+      "linkability": 25,
+      "store_bytes": 6832,
+      "build_sec": 0.07610800000838935,
+      "user_encrypt_sec": {
+        "mean": 0.04863683000439778,
+        "std": 0.0023136948131305918
+      },
+      "encrypt_per_value_sec": 0.0032424553336265188,
+      "server_sec": {
+        "mean": 0.206258150015492,
+        "std": 0.0074421496234587355
+      },
+      "server_per_comparison_sec": 0.0017188179167957666,
+      "user_decrypt_all_sec": {
+        "mean": 0.3731461799703538,
+        "std": 0.012197686954486475
+      },
+      "path_matching_sec (tree traversal)": {
+        "mean": 8.139001438394189e-05,
+        "std": 7.291883155144356e-06
+      },
+      "per_decrypt_sec": {
+        "mean": 0.0031095514997529486,
+        "std": 0.00010164739128738725
+      },
+      "path_follow_est_sec (derived)": 0.015547757498764744,
+      "end_to_end_sec (measured, decrypt-all)": {
+        "mean": 0.6281225500046276,
+        "std": 0.017116916077803537
+      },
+      "ciphertext_bytes": 256,
+      "messages": {
+        "client_to_server": 1,
+        "server_to_client": 1,
+        "round_trips": 1
+      },
+      "query_bytes": 3840,
+      "response_bytes": 30720,
+      "total_communication_bytes": 34560,
+      "agreement_with_plaintext": "20/20"
+    }
+  }
+}
